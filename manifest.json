@@ -21,7 +21,7 @@
           "activeLow": false,
           "direction": "out",
           "name": "led",
-          "pin": 18,
+          "pins": [18],
           "value": 0
         }
       ]
@@ -34,20 +34,18 @@
           "items": {
             "type": "object",
             "required": [
-              "pin"
+              "pins"
             ],
             "properties": {
-              "pin": {
-                "minimum": 0,
-                "type": "integer"
-              },
-              "name": {
-                "type": "string"
+              "pins": {
+                "type": "array",
+                "items": {
+                  "type": "integer",
+                  "minimum": 0
+                }
               },
               "direction": {
                 "enum": [
-                  "in - BinarySensor",
-                  "in - PushButton",
                   "out"
                 ],
                 "type": "string"
