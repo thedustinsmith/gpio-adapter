@@ -1,5 +1,5 @@
 {
-  "name": "gpio-adapter",
+  "name": "gpios-adapter",
   "display_name": "GPIO",
   "version": "0.7.1",
   "description": "GPIO adapter plugin for Mozilla WebThings Gateway",

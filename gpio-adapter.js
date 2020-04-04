@@ -83,7 +83,7 @@ class GpioProperty extends Property {
   }
 
   update() {
-    this.setCachedValue(this.device.gpio.readSync());
+    this.setCachedValue(this.device.gpios[0].readSync());
     this.device.notifyPropertyChanged(this);
     if (this['@type'] == 'PushedProperty') {
       const evt = this.value ? 'pressed' : 'released';
@@ -137,7 +137,6 @@ class GpioDevice extends Device {
     this.pinConfig = pinConfig;
     this.name = pinConfig.name;
 
-    console.log('GPIO:', this.pinConfig);
     switch (pinConfig.direction) {
 
       // case DIRECTION_INPUT_BINARY_SENSOR:
